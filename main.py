@@ -4,10 +4,6 @@ import pandas as pd
 
 def bot():
 
-    num=50
-
-
-    #CDV
     options = webdriver.ChromeOptions()
     options.add_argument('--disable-gpu')
     options.add_argument('user-agent=Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/102.0.5005.61 Safari/537.36')
@@ -16,7 +12,6 @@ def bot():
     driver = webdriver.Chrome(options=options)
     driver.implicitly_wait(10)
 
-    #이동
     driver.get('https://accounts.spotify.com/')
     print('로그인중....')
     time.sleep(3)
@@ -43,7 +38,7 @@ def bot():
         name=aa+" - "+a
 
         input = driver.find_element("xpath", '/html/body/div[4]/div/div[2]/div[3]/div[1]/div[2]/div[2]/div[2]/main/div[1]/section/div[2]/div[3]/section/div/div/input')
-        input.send_keys(name) #아이디 입력
+        input.send_keys(name)
         time.sleep(1.5)
         input_on = driver.find_element("xpath", '/html/body/div[4]/div/div[2]/div[3]/div[1]/div[2]/div[2]/div[2]/main/div[1]/section/div[2]/div[3]/div/div[1]/div/div[2]/div[1]/div/div[4]/button')
         input_on.click()
